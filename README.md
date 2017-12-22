@@ -2,7 +2,7 @@
 
 🐶 Generate documents from markdown
 
-<!-- page:logic -->
+<!-- logic -->
 
 ## ロジック
 
@@ -13,7 +13,7 @@
 5. ejsでhtmlへコンパイル
 6. docsディレクトリへ出力orZipで圧縮
 
-<!-- page:rule -->
+<!-- rule -->
 
 ## 分割ルール
 

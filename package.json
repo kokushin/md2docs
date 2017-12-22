@@ -1,0 +1,11 @@
+{
+  "name": "md2docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://kokushin@github.com/kokushin/md2docs.git",
+  "author": "kokushin <mail@kokush.in>",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.3.7"
+  }
+}

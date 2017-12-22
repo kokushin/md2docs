@@ -2,12 +2,16 @@ const fs = require('fs')
 const marked = require('marked')
 const config = require('../config.json')
 
+const convert = () => {
+  getData()
+}
+
 const getData = () => {
   fs.readFile(config.inputFile, 'utf8', (err, data) => {
     if (err) {
-      console.log(err)
+      throw err
     } else {
-      convertMarkdownToHtml(data);
+      convertMarkdownToHtml(data)
     }
   })
 }
@@ -64,7 +68,15 @@ const getPageTitle = (data) => {
 }
 
 const convertJson = (obj) => {
-  // convert
+  const json = JSON.stringify(obj)
+
+  fs.writeFile('build/data.json', json, (err) => {
+    if (err) {
+      throw err
+    } else {
+      console.log('Created json file.')
+    }
+  })
 }
 
-(() => getData())()
+(() => convert())()

@@ -5,7 +5,13 @@
   "repository": "https://kokushin@github.com/kokushin/md2docs.git",
   "author": "kokushin <mail@kokush.in>",
   "license": "MIT",
+  "scripts": {
+    "gen": "node build/convert.js && node build/render.js"
+  },
   "dependencies": {
     "marked": "^0.3.7"
+  },
+  "devDependencies": {
+    "ejs": "^2.5.7"
   }
 }

@@ -2,6 +2,8 @@
 
 🐶 Generate documents from markdown
 
+<!-- page:logic -->
+
 ## ロジック
 
 1. mdファイルを読み込み
@@ -10,6 +12,8 @@
 4. ejsへデータを渡す
 5. ejsでhtmlへコンパイル
 6. docsディレクトリへ出力orZipで圧縮
+
+<!-- page:rule -->
 
 ## 分割ルール
 

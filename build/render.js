@@ -6,7 +6,7 @@ const render = () => {
 }
 
 const getData = () => {
-  const json = 'build/data.json'
+  const json = 'data/data.json'
   const data = JSON.parse(fs.readFileSync(json, 'utf8'))
 
   return data

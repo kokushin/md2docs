@@ -70,7 +70,7 @@ const getPageTitle = (data) => {
 const convertJson = (obj) => {
   const json = JSON.stringify(obj)
 
-  fs.writeFile('build/data.json', json, (err) => {
+  fs.writeFile('data/data.json', json, (err) => {
     if (err) {
       throw err
     } else {

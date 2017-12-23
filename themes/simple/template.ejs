@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><% if (data.id == 'index') { %><%= meta.title %><% } else { %><%= data.item.title %> - <%= meta.title %><% } %></title>
+  <%- include('style/style') %>
+</head>
+<body>
+  <%- include('layouts/header') %>
+
+  <div class="container">
+    <%- include('layouts/sidebar') %>
+    <%- include('layouts/main') %>
+  </div>
+
+  <%- include('layouts/footer') %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

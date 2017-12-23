@@ -1,26 +1,21 @@
 const fs = require('fs')
 const marked = require('marked')
-const config = require('../config.json')
 
-const convert = () => {
+const md2json = () => {
   getData()
 }
 
 const getData = () => {
-  fs.readFile(config.inputFile, 'utf8', (err, data) => {
+  fs.readFile('README.md', 'utf8', (err, data) => {
     if (err) {
       throw err
     } else {
-      convertMarkdownToHtml(data)
+      createSchema(marked(data))
     }
   })
 }
 
-const convertMarkdownToHtml = (data) => {
-  createData(marked(data))
-}
-
-const createData = (data) => {
+const createSchema = (data) => {
   const row = data.split(/<!--[\s\S]*?-->/g)
   let obj = []
   let id = getPageId(data)
@@ -45,6 +40,18 @@ const createData = (data) => {
   convertJson(obj)
 }
 
+const convertJson = (obj) => {
+  const json = JSON.stringify(obj)
+
+  fs.writeFile('data.json', json, (err) => {
+    if (err) {
+      throw err
+    } else {
+      console.log('Created json file.')
+    }
+  })
+}
+
 const getPageId = (data) => {
   const ids = data.match(/<!--[\s\S]*?-->/g)
   let id = ['index']
@@ -67,16 +74,4 @@ const getPageTitle = (data) => {
   return title
 }
 
-const convertJson = (obj) => {
-  const json = JSON.stringify(obj)
-
-  fs.writeFile('data/data.json', json, (err) => {
-    if (err) {
-      throw err
-    } else {
-      console.log('Created json file.')
-    }
-  })
-}
-
-(() => convert())()
+(() => md2json())()

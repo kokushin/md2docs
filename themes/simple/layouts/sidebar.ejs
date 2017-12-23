@@ -1,0 +1,7 @@
+<aside class="sidebar">
+  <ul>
+  <% data.all.forEach(function(value, key) { %>
+    <li<% if (value.id == data.item.id) { %> class="is-current"<% } %>><a href="<%= value.id %>.html"><%= value.title %></a></li>
+  <% }) %>
+  </ul>
+</aside>

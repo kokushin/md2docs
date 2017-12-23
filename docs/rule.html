@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記述ルール - md2docs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<style>
+  .header {
+    border-bottom: 1px solid #eee;
+    padding: 1em 40px;
+  }
+  .header .logo {
+    font-size: 24px;
+  }
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0 4em;
+  }
+  @media screen and (max-width: 786px) {
+    .container {
+      display: block;
+    }
+  }
+  .content {
+    flex: 1;
+  }
+  .content .entry {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+  .sidebar {
+    padding: 2em;
+  }
+  .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 .5em;
+    border-left: 2px solid #eee;
+  }
+  .sidebar li a {
+    display: block;
+    color: #000;
+    padding: .25em .5em;
+    text-decoration: none;
+  }
+  .sidebar li a:hover {
+    text-decoration: underline;
+  }
+  .sidebar li.is-current a {
+    color: #999;
+    cursor: default;
+  }
+  .sidebar li.is-current a:hover {
+    text-decoration: none;
+  }
+  .footer {
+    text-align: center;
+    padding: 1em 40px;
+  }
+  .footer p {
+    color: #999;
+    font-size: 12px;
+  }
+</style>
+
+</head>
+<body>
+  <header class="header">
+  <div class="logo">md2docs</div>
+</header>
+
+
+  <div class="container">
+    <aside class="sidebar">
+  <ul>
+  
+    <li><a href="index.html">md2docs</a></li>
+  
+    <li><a href="install.html">インストール</a></li>
+  
+    <li><a href="usage.html">使い方</a></li>
+  
+    <li class="is-current"><a href="rule.html">記述ルール</a></li>
+  
+    <li><a href="todo.html">ToDo</a></li>
+  
+    <li><a href="developer.html">開発者</a></li>
+  
+  </ul>
+</aside>
+
+    <main class="content">
+  <article class="entry">
+    
+<h2 id="-">記述ルール</h2>
+<p>md2docsを利用するにはいくつかのルールがあります。</p>
+<h3 id="1-h1-">1. <code>h1</code>はドキュメントの先頭で一度だけ記述する</h3>
+<p>md2docsではh1(例: # title)をページのタイトルとして扱うため、一度しか記述できません。</p>
+<pre><code>// NG
+
+# title
+
+# title2
+</code></pre><h3 id="2-">2. ページ単位で分割する場合は<code>&lt;!-- --&gt;</code>を利用する</h3>
+<p>マークダウン中のセクションをページ単位に分割して出力したい場合は、<code>&lt;!-- --&gt;</code>をセクションの開始位置に記述します。</p>
+<p><code>&lt;!-- --&gt;</code>の中にはページのhtmlファイル名を記述します。例えば下記の例では、page1.htmlを出力します:</p>
+<pre><code>&lt;!-- page1 --&gt;
+
+## page1
+</code></pre><p>また、ページ分割を行った場合はh2(例: ## page1)がページタイトルとして扱われます。</p>
+
+  </article>
+</main>
+
+  </div>
+
+  <footer class="footer">
+  <p>Last update: <time>2017/12/23 20:10:37</time></p>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

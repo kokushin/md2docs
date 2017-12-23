@@ -6,12 +6,17 @@
   "author": "kokushin <mail@kokush.in>",
   "license": "MIT",
   "scripts": {
-    "gen": "node build/convert.js && node build/render.js"
+    "gen": "node build/md2json.js && gulp ejs --silent",
+    "edit": "chokidar README.md -c 'npm run gen'"
   },
   "dependencies": {
     "marked": "^0.3.7"
   },
   "devDependencies": {
-    "ejs": "^2.5.7"
+    "chokidar-cli": "^1.2.0",
+    "ejs": "^2.5.7",
+    "gulp": "^3.9.1",
+    "gulp-ejs": "^3.1.0",
+    "gulp-rename": "^1.2.2"
   }
 }
